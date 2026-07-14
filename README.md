@@ -16,7 +16,7 @@ This repository continues the project under new stewardship:
 
 The project is undergoing dependency, security, ESI, database, and deployment modernization. Compatibility claims should be validated against the current default branch and release notes before production deployment.
 
-For current project information, see the [Changelog](https://github.com/KPC-Consulting-Contracting/eve-skylize/wiki/Changelog).
+For current project information, see the [Changelog](https://github.com/Null-Sec-North/eve-skylize/wiki/Changelog).
 
 ## Features
 
@@ -37,7 +37,7 @@ For current project information, see the [Changelog](https://github.com/KPC-Cons
 - Retrieve current market-price data through EVE Swagger Interface (ESI) endpoints.
 - Export moon-scan information as CSV when the user has the required application permission.
 
-![skŸlizer moon-scan view](https://raw.githubusercontent.com/wiki/KPC-Consulting-Contracting/eve-skylize/img/skylizer_moon.png)
+![skŸlizer moon-scan view](https://raw.githubusercontent.com/wiki/Null-Sec-North/eve-skylize/img/skylizer_moon.png)
 
 ### Structure Scans and Directional Scanner Results
 
@@ -58,7 +58,7 @@ For current project information, see the [Changelog](https://github.com/KPC-Cons
 - Record wormhole destinations by solar-system name or space classification, including high security, low security, null security, and wormhole space.
 - Filter results by gas, ore, exploration, combat, faction, wormhole, and structure categories.
 
-![skŸlizer probe-scan view](https://raw.githubusercontent.com/wiki/KPC-Consulting-Contracting/eve-skylize/img/skylizer_scan.png)
+![skŸlizer probe-scan view](https://raw.githubusercontent.com/wiki/Null-Sec-North/eve-skylize/img/skylizer_scan.png)
 
 ### Mining Ledgers and Structure Management
 
@@ -83,10 +83,10 @@ For current project information, see the [Changelog](https://github.com/KPC-Cons
 
 Installation, application-update, data-update, and release information is maintained in the project wiki:
 
-- [Changelog](https://github.com/KPC-Consulting-Contracting/eve-skylize/wiki/Changelog)
-- [Update the data](https://github.com/KPC-Consulting-Contracting/eve-skylize/wiki/Update-Data)
-- [Update the application](https://github.com/KPC-Consulting-Contracting/eve-skylize/wiki/Update-Application)
-- [How to install](https://github.com/KPC-Consulting-Contracting/eve-skylize/wiki/Install)
+- [Changelog](https://github.com/Null-Sec-North/eve-skylize/wiki/Changelog)
+- [Update the data](https://github.com/Null-Sec-North/eve-skylize/wiki/Update-Data)
+- [Update the application](https://github.com/Null-Sec-North/eve-skylize/wiki/Update-Application)
+- [How to install](https://github.com/Null-Sec-North/eve-skylize/wiki/Install)
 
 The wiki content may require further revision as the modernization work proceeds.
 
@@ -119,13 +119,11 @@ skŸlizer provides a foundation for developing EVE Online administrative and int
 
 The historical implementation was built with [Zend Framework 3](https://github.com/zendframework/zendframework) and was based in part on the [Role Demo sample by Oleg Krivtsov](https://github.com/olegkrivtsov/using-zf3-book-samples/tree/master/roledemo). Zend Framework is no longer maintained. [Laminas MVC](https://docs.laminas.dev/laminas-mvc/) is currently in security-only maintenance, so future architectural work should evaluate maintained Laminas components and [Mezzio](https://docs.mezzio.dev/) where an application-level migration is justified.
 
-The historical SonarCloud project remains available as a legacy reference: [chrRtg_eve-skylizer](https://sonarcloud.io/dashboard?id=chrRtg_eve-skylizer).
-
 ## Contributing
 
 Contributions are welcome. Before opening an issue or pull request:
 
-1. Search the existing [issues](https://github.com/KPC-Consulting-Contracting/eve-skylize/issues) and [discussions](https://github.com/KPC-Consulting-Contracting/eve-skylize/discussions).
+1. Search the existing [issues](https://github.com/Null-Sec-North/eve-skylize/issues) and [discussions](https://github.com/Null-Sec-North/eve-skylize/discussions).
 2. Use the appropriate issue form for reproducible defects, feature proposals, or documentation corrections.
 3. Do not include access tokens, ESI refresh tokens, credentials, private corporation data, database dumps, or other sensitive information in public submissions.
 4. Keep changes focused and document any database migration, configuration, dependency, or compatibility impact.
@@ -135,7 +133,7 @@ Project-maintenance inquiries may be directed to **Solomon Iskander** through th
 
 ## Security
 
-Do not report security vulnerabilities through a public issue. Use the repository's [private security-advisory form](https://github.com/KPC-Consulting-Contracting/eve-skylize/security/advisories/new) when available.
+Do not report security vulnerabilities through a public issue. Use the repository's [private security-advisory form](https://github.com/Null-Sec-North/eve-skylize/security/advisories/new) when available.
 
 Before submitting logs or configuration excerpts, remove EVE SSO secrets, OAuth tokens, ESI tokens, database credentials, personally identifying information, corporation-sensitive information, hostnames, and internal network details that should not be public.
 
@@ -148,7 +146,7 @@ This project is provided under the [Apache License 2.0](https://choosealicense.c
 The project retains the original author's acknowledgments and extends them for the maintained continuation:
 
 - **Rtg Quack / chrRtg**, original creator and maintainer of skŸlizer.
-- The contributors to [Laminas, the open-source continuation of Zend Framework](https://getlaminas.org).
+- The contributors of [Laminas, the open-source continuation of Zend Framework](https://getlaminas.org).
 - Oleg Krivtsov for [Using Zend Framework 3](https://github.com/olegkrivtsov/using-zend-framework-3-book). Thank you, Oleg, and respect for the substantial effort invested in that work.
 - **OG**, for teaching the original maintainer Doctrine 2 and related development practices.
 - [EVELabs](https://github.com/EvELabs/oauth2-eveonline) for the historical EVE Online OAuth library.
@@ -158,7 +156,7 @@ The project retains the original author's acknowledgments and extends them for t
 Historical project resources retained for reference:
 
 - [Original upstream repository](https://github.com/chrRtg/eve-skylizer)
-- [Previous public demo location](https://skylizer.eve-tools.info)
+- [Previous public demo location - no longer available](https://skylizer.eve-tools.info)
 
 ## Trademark Notice
 
