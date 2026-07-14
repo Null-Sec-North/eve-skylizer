@@ -1,0 +1,50 @@
+name: Documentation correction
+description: Report missing, inaccurate, unclear, or outdated project documentation.
+title: "[Docs]: "
+labels:
+  - documentation
+  - triage
+assignees: []
+body:
+  - type: input
+    id: location
+    attributes:
+      label: Document or page
+      description: Identify the file, wiki page, heading, or URL that requires revision.
+      placeholder: README.md — Current Modernization Baseline
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Documentation problem
+      description: Explain what is missing, inaccurate, unclear, or obsolete.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed_change
+    attributes:
+      label: Proposed correction
+      description: Provide corrected wording, updated references, or the information that should be added.
+    validations:
+      required: false
+
+  - type: textarea
+    id: supporting_information
+    attributes:
+      label: Supporting information
+      description: Include authoritative references, relevant version details, or related issues.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Submission checklist
+      options:
+        - label: I searched existing issues for the same documentation problem.
+          required: true
+        - label: I removed credentials, tokens, private corporation data, and other sensitive information.
+          required: true

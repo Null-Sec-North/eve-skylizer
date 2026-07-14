@@ -1,28 +1,362 @@
-nbproject
-._*
-.vagrant
-.~lock.*
-.buildpath
-.DS_Store
-.idea
-.history
-.project
-.nbproject
-.settings
-.todo.txt
+# =============================================================================
+# skŸlizer repository ignore rules
+# =============================================================================
+# This file is intentionally organized by artifact type so that every ignore
+# rule has an explicit purpose and can be reviewed independently.
+#
+# Maintenance conventions:
+# - Keep source code, documentation, safe examples, and deployment definitions
+#   under version control unless a project-specific rule states otherwise.
+# - Keep credentials, private runtime data, generated output, caches, reports,
+#   backups, downloaded data sets, and machine-specific files out of Git.
+# - Negation rules beginning with "!" intentionally restore selected templates
+#   or placeholder files that would otherwise be ignored by broader patterns.
+# - Several legacy project-specific rules are retained for compatibility. Review
+#   those rules before reusing this file in another repository.
+# =============================================================================
+
+# =============================================================================
+# 01. Environment configuration, credentials, certificates, and private keys
+# =============================================================================
+# Local environment files may contain secrets or machine-specific settings.
+.env
+.env.*
+
+# Safe environment templates remain tracked.
+!.env.example
+!.env.sample
+!.env.template
+
+# Local configuration overrides and files explicitly marked as secret.
+config.local.*
+settings.local.*
+*.secret.*
+
+# Certificates, private keys, and PKCS bundles.
+*.pem
+*.key
+*.pfx
+*.p12
+*.crt
+*.cer
+*.der
+
+# Common OpenSSH private-key filenames.
+id_rsa
+id_rsa.*
+id_ed25519
+id_ed25519.*
+
+# OAuth, API-client, and application token files.
+client_secret.json
+oauth_state.json
+oauth_tokens.json
+refresh_token.json
+token.json
+tokens.json
+data/tokens.json
+
+# =============================================================================
+# 02. Google Apps Script and clasp local configuration
+# =============================================================================
+# User-level clasp authentication and local project mappings must not be shared.
+# The repository's appsscript.json manifest is intentionally not ignored.
+.clasprc.json
+.clasp.credentials.json
+.clasp.local.json
+.clasp.json
+
+# Locally generated or imported Apps Script helper files.
+apps_script/BootstrapExample.gs
+apps_script/Config.gs.FROMAPPS_SCRIPTS
+
+# =============================================================================
+# 03. Secret-scanning reports, remediation backups, and redaction workspaces
+# =============================================================================
+# Scanner reports may reveal secret locations, repository history, or findings.
+secret-scan-report/
+secret-scan-report*.json
+secret-scan-report*.csv
+secret-scan-report*.txt
+repo-secrets-report/
+
+# Backups produced before automated secret removal or redaction.
+*.secrets-backup
+.secrets-backup/
+.repo-secrets-backup/
+
+# =============================================================================
+# 04. PHP, Composer, and application dependencies
+# =============================================================================
+# Composer-installed third-party dependencies and standalone Composer binaries.
+/vendor/
+composer.phar
+
+# Repository policy currently excludes the dependency lock file and local PHPCS
+# configuration. Remove these rules if the application adopts committed,
+# reproducible dependency locking or a shared coding-standard configuration.
 composer.lock
 phpcs.xml
+
+# =============================================================================
+# 05. Python bytecode, virtual environments, packaging, and test output
+# =============================================================================
+# Compiled Python files and interpreter caches.
+__pycache__/
+*$py.class
+*.py[cod]
+*.pyc
+
+# Local virtual environments.
+.venv/
+venv/
+env/
+ENV/
+
+# Packaging metadata and build intermediates.
+*.egg-info/
+.eggs/
+
+# Coverage, type-checker, test-runner, and linter caches.
+.coverage
+coverage.xml
+htmlcov/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+
+# =============================================================================
+# 06. Node.js and JavaScript dependencies and package-manager caches
+# =============================================================================
+node_modules/
+.npm/
+.yarn/
+.pnpm-store/
+
+# =============================================================================
+# 07. Terraform state, provider cache, overrides, and crash output
+# =============================================================================
+# Terraform state can contain credentials and infrastructure-sensitive values.
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+
+# Local override files and crash logs.
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+crash.log
+crash.*.log
+
+# =============================================================================
+# 08. Ansible and Vagrant local runtime artifacts
+# =============================================================================
+.ansible/
+*.retry
+.vagrant
+
+# =============================================================================
+# 09. IDEs, editors, project metadata, and local task files
+# =============================================================================
+# JetBrains, Visual Studio Code, and local-history data.
+.idea/
+.idea
 .vscode/
+.history/
+.history
+
+# Eclipse, NetBeans, and related project metadata.
+.buildpath
+.project
+.settings
+.nbproject
+nbproject
+
+# Local personal task list.
+.todo.txt
+
+# =============================================================================
+# 10. Build output, generated sites, release packages, and archives
+# =============================================================================
+build/
+dist/
+generated/
+site/
+site-zensical/
+
+# Release archives and other ZIP packages.
+release/*.zip
+*.zip
+
+# =============================================================================
+# 11. Logs, reports, exports, downloads, and generated output directories
+# =============================================================================
+logs/
+output/
+reports/
+exports/
+downloads/
+charts/
+*.log
+
+# =============================================================================
+# 12. Runtime caches, temporary directories, and generic lock files
+# =============================================================================
+.cache/
+cache/
+data/cache
+tmp/
+temp/
+
+# Runtime lock files. This broad rule also excludes dependency lock files unless
+# they are explicitly re-included elsewhere.
+*.lock
+
+# =============================================================================
+# 13. Application runtime data, private resources, and local-only utilities
+# =============================================================================
+# The complete data directory is runtime-managed and may contain local database
+# files, downloaded data, tokens, or generated state.
+data/
+data/mariadb/
 /data/fuzzwork_last.txt
+
+# Private resources and local-only application utilities.
+/resource/private/
 /public/i.php
-/vendor/
-/eve-skylizer.wiki/
-/ressource/db_model.mwb.bak
-/ressource/private/
 /bin/example.php
 /snippets/
+
+
+# =============================================================================
+# 14. Database dumps, backups, and schema-design backup files
+# =============================================================================
+*.dump
+*.sql.gz
+backups/*.sql
+backups/*.sql.gz
+
+# Preserve the empty backup directory placeholder.
+!backups/.gitkeep
+
+# MySQL Workbench/MariaDB schema-model backup generated by the modeling tool.
+/resource/db_model.mwb.bak
+
+
+# =============================================================================
+# 15. Downloaded EVE Static Data Export and other external data sets
+# =============================================================================
+# These directories contain regenerable or externally sourced EVE data.
+sde/
+sde_downloads/
+
+
+# =============================================================================
+# 16. Power BI, Power Query, DAX, TMDL, and report-builder artifacts
+# =============================================================================
+# Generated workspaces and project-specific Power BI tooling directories.
+powerbi/
+pbix/
+pbip/
+powerquery/
+dax/
+tmdl/
+powerbi/EVE_Market_Analytics/
+powerbi/EVE_Market_Analytics_Kit/
+powerbi/pbix_import/
+powerbi_date_cleanup/
+powerbi_pbip_builder/
+powerbi_report_pages_automation_kit/
+
+# Power BI models, reports, templates, queries, and tabular definitions.
+*.abf
+*.pbip
+*.pbir
+*.pbit
+*.pbix
+*.dax
+*.pq
+*.tmdl
+
+
+# =============================================================================
+# 17. Generated tabular data, Office files, text output, and documentation
+# =============================================================================
+# These broad patterns are retained from the consolidated source rules. They
+# exclude generated exports and documents regardless of location.
+*.csv
+*.xls
+*.xlsm
+*.xlsx
+*.txt
+*.md
+
+# Safe source/documentation exceptions that remain tracked.
+!**/README.md
+!docs/*.csv
+!sql/*.csv
+!templates/*.xlsx
+
+# Legacy generated or imported documentation files that remain intentionally
+# ignored. These rules appear after the README exception and therefore override
+# it for the specifically named paths below.
+docs/DEPLOYMENT_CHECKLIST.md
+docs/DEPLOYMENT_CHECKLIST.md.FROMDOCS
+docs/README.md
+docs/README.md.FROMDOCS
+docs/UPLOAD_AND_DEPLOYMENT_GUIDE.md
+docs/VALIDATION_REPORT.md
+docs/VALIDATION_REPORT.md.FROMDOCS
+
+# =============================================================================
+# 18. Code-quality analysis, CI workspaces, and scanner configuration
+# =============================================================================
+# Local SonarQube/SonarCloud analysis cache and machine-specific configuration.
+.scannerwork/
 sonar-project-local.properties
 sonar-project.properties
+
+# Locally generated continuous-integration workspace or imported CI artifacts.
 ci/
-.scannerwork/
-composer.phar
+
+# =============================================================================
+# 19. Operating-system metadata and filesystem sidecar files
+# =============================================================================
+# macOS metadata and AppleDouble resource-fork files.
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows Explorer thumbnail and desktop metadata.
+Desktop.ini
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+
+# =============================================================================
+# 20. Temporary, backup, editor-swap, and conflict-resolution files
+# =============================================================================
+# Generic backup and merge-conflict remnants.
+*.bak
+*.old
+*.OLD
+*.orig
+
+# Editor swap files and transient temporary files.
+*.swp
+*.temp
+*.tmp
+
+# Microsoft Office temporary lock files.
+.~lock.*
+
+# =============================================================================
+# 21. Repository-specific legacy and migration artifacts
+# =============================================================================
+# These entries are retained from earlier repository consolidation or migration
+# workflows and should be reviewed if the related components are removed.
+/eve-skylizer.wiki/
+

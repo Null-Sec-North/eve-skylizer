@@ -1,128 +1,165 @@
-# skŸlizer - The Eve-Online scan analyzer and Structures Manager
+# skŸlizer — The EVE Online Scan Analyzer and Structures Manager
 
----
-**NOTE**
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://choosealicense.com/licenses/apache-2.0/)
 
-While I do not play Eve Online since 2023 I do not work any longer on this project. If you plan to take the project over and you have specific questions please feel free to reach out to me.
+skŸlizer is a web application for importing, analyzing, organizing, and sharing EVE Online moon scans, probe-scanner results, directional-scanner results, corporation structure data, and mining ledgers.
 
----
+## Project Status and Stewardship
 
-skŸlizer is a tool for Eve Online to handle any kind of scans and to gather as much as possible data from any Scan or Dscan.
+The original skŸlizer project was created and maintained by **Rtg Quack** under the GitHub account **chrRtg**. The original maintainer stopped actively developing the project after leaving EVE Online in 2023, and the upstream repository was later archived.
 
-skŸlizer add information about your corporations structures and visualize the mining ledgers.
+This repository continues the project under new stewardship:
 
-For up to date information please have a look into the [Changelog](https://github.com/chrRtg/eve-skylizer/wiki/Changelog).
+- **Canonical repository:** [KPC-Consulting-Contracting/eve-skylize](https://github.com/KPC-Consulting-Contracting/eve-skylize)
+- **Current maintainer:** Solomon Iskander
+- **Original upstream repository:** [chrRtg/eve-skylizer](https://github.com/chrRtg/eve-skylizer)
+
+The project is undergoing dependency, security, ESI, database, and deployment modernization. Compatibility claims should be validated against the current default branch and release notes before production deployment.
+
+For current project information, see the [Changelog](https://github.com/KPC-Consulting-Contracting/eve-skylize/wiki/Changelog).
 
 ## Features
 
-1. **Scan something in EVE & share your findings with your mates**
-2. **copy'n paste your scan to skŸlizer**
-3. **view & filter by value and ore - find the ISK** (or your next targets)
-4. **view & filter by anomalies**
-5. **Import and view Mining Ledgers - show them with efficacy grapsh in the new Ledger-View**
-6. **Structures Dashboard - show timers, fuel due, chunk due and inactive drills**
+### Scan Import and Sharing
 
-* Identify the valuable moons (ISK!) in a system or the whole constellation
-* How to use: copy moon scan data from Eve Online. Press below the scan results "copy to clipboard", then navigate to skŸlizer and paste the scan to the area to the right and then the button "submit your scan" below the area.
-* **search** by system-name or constellation, just start typing - autosuggest fill the gaps
-* easily **navigate** to neighbour systems, a constellation or show all scanned moons in the current constellation
-* add structures, owning corporation and the structure name or some notes to any moon
-* Help Functions
+- Import scan results by copying them directly from the EVE Online client and pasting them into skŸlizer.
+- Store and share scan findings with authorized users.
+- Search by solar-system name or constellation with autocomplete support.
+- Navigate between neighboring systems, constellations, and previously scanned moons.
+- Filter and sort scan results by type, composition, quantity, and estimated ISK value.
 
 ### Moon Scans
 
-* show the **composition, amount and ISK for the goo** for each moon
-* show the **composition, amount and ISK of the refined minerals ("Ore")** for each moon
-* filter by goo or refined minerals
-* order by value (which moon is the R64 equivalent?)
-* polls **daily prices from Eve** via ESI call
-* for Moon-Managers (specific right in the tool) create CSV exports
+- Display moon-material composition, quantity, and estimated ISK value.
+- Display the composition, quantity, and estimated ISK value of refined materials.
+- Filter results by moon material or refined mineral.
+- Sort moons by estimated value to identify high-value extraction targets.
+- Retrieve current market-price data through EVE Swagger Interface (ESI) endpoints.
+- Export moon-scan information as CSV when the user has the required application permission.
 
-![skylizer-moon](https://raw.githubusercontent.com/wiki/chrRtg/eve-skylizer/img/skylizer_moon.png)
+![skŸlizer moon-scan view](https://raw.githubusercontent.com/wiki/KPC-Consulting-Contracting/eve-skylize/img/skylizer_moon.png)
 
-### Structures Scans (Directional Scanner)
+### Structure Scans and Directional Scanner Results
 
-* just cut'n paste your scan
-* get a list with all citadels, engineering complex, refineries and towers
-* Refineries are connected whith the moon scans immediately
-* also get the postions next to a planet, moon, station or stargate with their distance
-* player given names are detected and stored
-* edit details like ownership and name
-* automatic replacement of refineries if type or name has changed
+- Import directional-scanner results by copying and pasting them from the EVE Online client.
+- Identify Upwell structures, engineering complexes, refineries, control towers, and related objects.
+- Associate refinery records with known moon-scan data.
+- Record structure positions relative to planets, moons, stations, and stargates, including distance information when available.
+- Detect and store player-assigned structure names.
+- Maintain ownership, naming, notes, and other structure metadata.
+- Reconcile refinery records when a structure type or name changes.
 
-### Anomaly Scans (Probe Scanner)
+### Anomaly and Probe-Scanner Results
 
-* just cut'n paste your scan
-* get a overview by anomaly type
-* automatic removal and improvement on each scan you enter
-* links to description of anomaly in English and German
-* add wormhole targets by systems name or flat (high, low, 0.0, WH)
-* filter by type of anomaly (gas & ore, exploration, combat, faction, wormhole and structures)
+- Import probe-scanner results by copying and pasting them from the EVE Online client.
+- Group results by anomaly or signature type.
+- Update stored results as newer scans are submitted.
+- Link to English- and German-language anomaly reference material.
+- Record wormhole destinations by solar-system name or space classification, including high security, low security, null security, and wormhole space.
+- Filter results by gas, ore, exploration, combat, faction, wormhole, and structure categories.
 
-![skylizer-scan](https://raw.githubusercontent.com/wiki/chrRtg/eve-skylizer/img/skylizer_scan.png)
+![skŸlizer probe-scan view](https://raw.githubusercontent.com/wiki/KPC-Consulting-Contracting/eve-skylize/img/skylizer_scan.png)
 
-In the future skŸlizer will become a tool to share moon, scan and dscan results and to combine the scan results. It will e.g. show after a scan which kind of structure has been anchored on a moon or somewhere else.
+### Mining Ledgers and Structure Management
 
-## [PUBLIC Demo of skŸlizer](https://skylizer.eve-tools.info)
+- Import and visualize corporation mining-ledger data.
+- Display extraction efficiency and related ledger metrics.
+- Track structure timers, fuel deadlines, extraction events, and inactive drills.
+- Associate structures, owning corporations, structure names, and operational notes with moons.
 
-Data available in the public demo for:
+## Basic Use
 
-* 3QE-9Q
-* Alparena
-* Daras
-* F-TE1T
-* Hakonen
-* and some more like HM-UVD,  L-C3O7, Reschard, Taisy and ZOYW-O
+1. Perform a moon scan, probe scan, or directional scan in EVE Online.
+2. Use the EVE Online client option to copy the scan results to the clipboard.
+3. Paste the copied data into the appropriate skŸlizer import form.
+4. Submit the scan.
+5. Review, filter, sort, annotate, and share the imported results according to your permissions.
 
-Feel free to add your scans (or some from pastebin) to the tool.
+## Public Demo
 
-## Install and Update
+**TBD**
 
-Please have a look into the wiki to understand how to install and maintain skŸlizer:
+## Installation and Updates
 
-* [Changelog](https://github.com/chrRtg/eve-skylizer/wiki/Changelog)
-* [Update the data](https://github.com/chrRtg/eve-skylizer/wiki/Update-Data)
-* [Update the application](https://github.com/chrRtg/eve-skylizer/wiki/Update-Application)
-* [How to install](https://github.com/chrRtg/eve-skylizer/wiki/Install)
+Installation, application-update, data-update, and release information is maintained in the project wiki:
 
-## Features of the framework (for developers)
+- [Changelog](https://github.com/KPC-Consulting-Contracting/eve-skylize/wiki/Changelog)
+- [Update the data](https://github.com/KPC-Consulting-Contracting/eve-skylize/wiki/Update-Data)
+- [Update the application](https://github.com/KPC-Consulting-Contracting/eve-skylize/wiki/Update-Application)
+- [How to install](https://github.com/KPC-Consulting-Contracting/eve-skylize/wiki/Install)
 
-skŸlizer is also a robust foundation to build any kind of EVE related tools on it.
+The wiki content may require further revision as the modernization work proceeds.
 
-* Code quality and security check: https://sonarcloud.io/dashboard?id=chrRtg_eve-skylizer
-* EVE ESI (swagger) API interface
-* Login is available only via EVE-SSO as a identity provider.
-* Allow login by EVE-Online player names, corporations or public access
-* Deny access by EVE-Online player names
-* A granular role-rights-permission system to manage who is allowed to use what.
-* User, Role and Permission administration interface
-* set one player name as application administrator, also with the capability to add more administrators
-* uses [Zend Framework 3](https://github.com/zendframework/zendframework)
-* based on the fantastic [Role Demo Sample from olegkrivtsov](https://github.com/olegkrivtsov/using-zf3-book-samples/tree/master/roledemo)
-* uses some more libraries, see below in the *thank you* section.
+## Current Modernization Baseline
+
+The following versions represent the current modernization target as of July 2026. They do not, by themselves, guarantee that every legacy code path has already been migrated or tested.
+
+- **PHP:** PHP 8.4 or PHP 8.5, using a currently supported patch release
+- **Database:** MariaDB 12.3 LTS; MariaDB 11.4 LTS may be retained temporarily where compatibility testing requires it
+- **Dependency management:** Current Composer 2.x stable release
+- **Required PHP extensions:** `curl`, `gd`, `intl`, `json`, `mbstring`, `openssl`, `pdo`, `pdo_mysql`, and `xml`
+- **Web server:** A currently supported Apache HTTP Server 2.4 release or a current NGINX stable release
+- **EVE API:** Current ESI endpoints and OpenAPI 3.x specifications, including compatibility-date handling where required
+- **Authentication:** Current EVE Single Sign-On using OAuth 2.0
+
+Refer to the official [PHP supported-versions table](https://www.php.net/supported-versions.php), [MariaDB release notes](https://mariadb.com/docs/release-notes/community-server), and [EVE Developer Documentation](https://developers.eveonline.com/docs/services/esi/overview/) when selecting production versions.
+
+## Framework and Developer Capabilities
+
+skŸlizer provides a foundation for developing EVE Online administrative and intelligence tools, including:
+
+- ESI integration based on the current OpenAPI specifications rather than the retired Swagger 2.0 specification.
+- EVE Single Sign-On as the identity provider.
+- Access rules based on EVE Online characters, corporations, application roles, and public-access settings.
+- Character-specific allow and deny controls.
+- Granular role, permission, and authorization management.
+- Administrative interfaces for users, roles, and permissions.
+- Support for assigning one or more application administrators.
+- Laminas components as the maintained continuation of Zend Framework packages.
+
+The historical implementation was built with [Zend Framework 3](https://github.com/zendframework/zendframework) and was based in part on the [Role Demo sample by Oleg Krivtsov](https://github.com/olegkrivtsov/using-zf3-book-samples/tree/master/roledemo). Zend Framework is no longer maintained. [Laminas MVC](https://docs.laminas.dev/laminas-mvc/) is currently in security-only maintenance, so future architectural work should evaluate maintained Laminas components and [Mezzio](https://docs.mezzio.dev/) where an application-level migration is justified.
+
+The historical SonarCloud project remains available as a legacy reference: [chrRtg_eve-skylizer](https://sonarcloud.io/dashboard?id=chrRtg_eve-skylizer).
 
 ## Contributing
 
-If you found a mistake or a bug please get in touch via
+Contributions are welcome. Before opening an issue or pull request:
 
-* Eve ingame mail to 'Rtg Quack'
-* via Eve online Forum thread about skŸlizer
+1. Search the existing [issues](https://github.com/KPC-Consulting-Contracting/eve-skylize/issues) and [discussions](https://github.com/KPC-Consulting-Contracting/eve-skylize/discussions).
+2. Use the appropriate issue form for reproducible defects, feature proposals, or documentation corrections.
+3. Do not include access tokens, ESI refresh tokens, credentials, private corporation data, database dumps, or other sensitive information in public submissions.
+4. Keep changes focused and document any database migration, configuration, dependency, or compatibility impact.
+5. Include tests or repeatable validation steps when practical.
+
+Project-maintenance inquiries may be directed to **Solomon Iskander** through the repository's Issues or Discussions sections.
+
+## Security
+
+Do not report security vulnerabilities through a public issue. Use the repository's [private security-advisory form](https://github.com/KPC-Consulting-Contracting/eve-skylize/security/advisories/new) when available.
+
+Before submitting logs or configuration excerpts, remove EVE SSO secrets, OAuth tokens, ESI tokens, database credentials, personally identifying information, corporation-sensitive information, hostnames, and internal network details that should not be public.
 
 ## License
 
-This code is provided under the [Apache License 2.0](https://choosealicense.com/licenses/apache-2.0/).
+This project is provided under the [Apache License 2.0](https://choosealicense.com/licenses/apache-2.0/). See the repository's `LICENSE` file for the full license text.
 
-## Requirements
+## Acknowledgments, Attribution, and Credits
 
-* Webserver, e.g. Apache
-* PHP 7.4 or better with `gd` and `intl` extensions
-* MySQL 5.6 or better.
+The project retains the original author's acknowledgments and extends them for the maintained continuation:
 
-## Thank you (to be extended)
+- **Rtg Quack / chrRtg**, original creator and maintainer of skŸlizer.
+- The contributors to [Laminas, the open-source continuation of Zend Framework](https://getlaminas.org).
+- Oleg Krivtsov for [Using Zend Framework 3](https://github.com/olegkrivtsov/using-zend-framework-3-book). Thank you, Oleg, and respect for the substantial effort invested in that work.
+- **OG**, for teaching the original maintainer Doctrine 2 and related development practices.
+- [EVELabs](https://github.com/EvELabs/oauth2-eveonline) for the historical EVE Online OAuth library.
+- [SeAT](https://github.com/eveseat/eseye) for the historical ESI interface.
+- [xell network seven](http://evemaps.dotlan.net/corp/xell_network_seven) and [V.e.G.A.](http://evemaps.dotlan.net/alliance/V.e.G.A.), with whom the original maintainer proudly flew for many years.
 
-* the people who made [Laminas - open-source continuation of Zend Framework](https://getlaminas.org) 
-* to Oleg Krivtsov [Using Zend Framework 3](https://github.com/olegkrivtsov/using-zend-framework-3-book). Thanks Oleg & respect to your great effort!
-* to OG for teaching me doctrine 2 and more
-* [EveLabs](https://github.com/EvELabs/oauth2-eveonline) for the  Oauth Library
-* [SeAT](https://github.com/eveseat/eseye) for the ESI interface
-* and of course to [xell network seven](http://evemaps.dotlan.net/corp/xell_network_seven) and [V.e.G.A.](http://evemaps.dotlan.net/alliance/V.e.G.A.), proud member and flying with them since some years
+Historical project resources retained for reference:
+
+- [Original upstream repository](https://github.com/chrRtg/eve-skylizer)
+- [Previous public demo location](https://skylizer.eve-tools.info)
+
+## Trademark Notice
+
+EVE Online and all associated logos and designs are the intellectual property of CCP hf. This project is a third-party application and is not affiliated with or endorsed by CCP hf.

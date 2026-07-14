@@ -1,0 +1,106 @@
+name: Feature request
+description: Propose a new capability or a material improvement to skŸlizer.
+title: "[Feature]: "
+labels:
+  - enhancement
+  - triage
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for product, workflow, integration, and modernization proposals. For general questions or early-stage ideas, use GitHub Discussions.
+
+  - type: input
+    id: summary
+    attributes:
+      label: Proposal summary
+      description: State the requested capability in one sentence.
+      placeholder: Add configurable notifications for structure fuel thresholds.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Primary area
+      options:
+        - Authentication or EVE SSO
+        - ESI integration
+        - Moon scans
+        - Directional scanner
+        - Probe scanner or anomalies
+        - Structure management
+        - Mining ledgers
+        - Reporting or exports
+        - Permissions or administration
+        - Database or data model
+        - Installation or deployment
+        - Security
+        - User interface
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or use case
+      description: Describe the operational problem, affected users, and why the current behavior is insufficient.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed_solution
+    attributes:
+      label: Proposed solution
+      description: Describe the desired workflow, inputs, outputs, permissions, and user experience.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Describe workarounds or alternative designs that were considered.
+    validations:
+      required: false
+
+  - type: textarea
+    id: technical_impact
+    attributes:
+      label: Technical and compatibility impact
+      description: Note any expected ESI scopes, database migrations, configuration changes, external services, security implications, or backward-compatibility concerns.
+    validations:
+      required: false
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Suggested acceptance criteria
+      description: List objective conditions that would demonstrate completion.
+      placeholder: |
+        - Administrators can define warning thresholds in hours.
+        - Authorized users can opt into notifications.
+        - No ESI refresh token is exposed in logs.
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional context
+      description: Add mockups, references, related issues, or implementation notes.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Submission checklist
+      options:
+        - label: I searched existing issues and discussions for a similar proposal.
+          required: true
+        - label: This request does not disclose credentials, tokens, or private corporation information.
+          required: true
