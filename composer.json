@@ -1,14 +1,14 @@
 {
-    "name": "rtgquack/skylizer",
-    "description": "skŸlizer: the Eve-Online Scan Analyzer",
+    "name": "Null-Sec-North/skylizer",
+    "description": "skŸlizer: the EVE Online Scan Analyzer",
     "type": "project",
-    "license": "BSD-3-Clause",
+    "license": "GPL-3.0-only",
     "keywords": [
         "eve-online",
         "api",
         "laminas"
     ],
-    "homepage": "https://skylizer.eve-tools.info",
+    "homepage": "https://skylizer.ca",
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
