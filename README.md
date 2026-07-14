@@ -1,6 +1,6 @@
 # skŸlizer — The EVE Online Scan Analyzer and Structures Manager
 
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://choosealicense.com/licenses/apache-2.0/)
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://choosealicense.com/licenses/gpl-3.0/)
 
 skŸlizer is a web application for importing, analyzing, organizing, and sharing EVE Online moon scans, probe-scanner results, directional-scanner results, corporation structure data, and mining ledgers.
 
@@ -10,7 +10,7 @@ The original skŸlizer project was created and maintained by **Rtg Quack** under
 
 This repository continues the project under new stewardship:
 
-- **Canonical repository:** [KPC-Consulting-Contracting/eve-skylize](https://github.com/KPC-Consulting-Contracting/eve-skylize)
+- **Canonical repository:** [Null-Sec-North/eve-skylize](https://github.com/KPC-Consulting-Contracting/eve-skylize)
 - **Current maintainer:** Solomon Iskander
 - **Original upstream repository:** [chrRtg/eve-skylizer](https://github.com/chrRtg/eve-skylizer)
 
