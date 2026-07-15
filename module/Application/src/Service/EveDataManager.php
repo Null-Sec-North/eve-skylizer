@@ -577,7 +577,7 @@ class EveDataManager
             $alliance_entity->setAllianceId($row);
             $this->entityManager->persist($alliance_entity);
 
-            // we collected enough to batch write and afterwards to free ressources for the next batch
+            // we collected enough to batch write and afterwards to free resources for the next batch
             if (($i % $batch_size) === 0) {
                 $this->entityManager->flush();
                 $this->entityManager->clear(); // Detaches all objects from Doctrine!

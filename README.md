@@ -1,6 +1,6 @@
 # skŸlizer — The EVE Online Scan Analyzer and Structures Manager
 
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://choosealicense.com/licenses/apache-2.0/)
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://choosealicense.com/licenses/gpl-3.0/)
 
 skŸlizer is a web application for importing, analyzing, organizing, and sharing EVE Online moon scans, probe-scanner results, directional-scanner results, corporation structure data, and mining ledgers.
 
@@ -141,7 +141,7 @@ Before submitting logs or configuration excerpts, remove EVE SSO secrets, OAuth 
 
 ## License
 
-This project is provided under the [Apache License 2.0](https://choosealicense.com/licenses/apache-2.0/). See the repository's `LICENSE` file for the full license text.
+This project is provided under the [GNU General Public License v3.0](https://choosealicense.com/licenses/gpl-3.0/). See the repository's `LICENSE` file for the full license text.
 
 ## Acknowledgments, Attribution, and Credits
 
